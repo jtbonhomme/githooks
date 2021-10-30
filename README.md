@@ -50,4 +50,4 @@ black................................................(no files to check)Skipped
 
 ## Todo
 
-- [ ] Read `gitleaks.toml` file from public remote location
+- [ ] Add github Action: https://github.com/marketplace/actions/semantic-pull-request

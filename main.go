@@ -43,6 +43,7 @@ var commitMsgReg = regexp.MustCompile(CommitMessagePattern)
 func main() {
 	input, _ := ioutil.ReadAll(os.Stdin)
 	param := strings.Fields(string(input))
+	fmt.Printf("pre-receive params: %s\n", param)
 
 	// allow branch/tag delete
 	if param[1] == "0000000000000000000000000000000000000000" {
@@ -50,6 +51,8 @@ func main() {
 	}
 
 	commitMsg := getCommitMsg(param[0], param[1])
+	fmt.Printf("commitMsg: %s\n", commitMsg)
+
 	for _, tmpStr := range commitMsg {
 		commitTypes := commitMsgReg.FindAllStringSubmatch(tmpStr, -1)
 
@@ -73,6 +76,7 @@ func main() {
 			}
 		}
 		if !strictMode {
+			fmt.Printf("all good\n")
 			os.Exit(0)
 		}
 	}
