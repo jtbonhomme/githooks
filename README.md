@@ -3,6 +3,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 My git hooks using [pre-commit.com](https://pre-commit.com)
+Note: `main.go` file is only used for demo purposes.
 
 ## Install Dependencies
 
