@@ -40,7 +40,7 @@ const strictMode = false
 
 var commitMsgReg = regexp.MustCompile(CommitMessagePattern)
 
-func main() {
+func main() { //nolint: gocyclo
 	input, _ := ioutil.ReadAll(os.Stdin)
 	param := strings.Fields(string(input))
 	fmt.Printf("pre-receive params: %s\n", param)
@@ -83,7 +83,7 @@ func main() {
 }
 
 func getCommitMsg(odlCommitID, commitID string) []string {
-	getCommitMsgCmd := exec.Command("git", "log", odlCommitID+".."+commitID, "--pretty=format:%s")
+	getCommitMsgCmd := exec.Command("git", "log", odlCommitID+".."+commitID, "--pretty=format:%s") //nolint: gosec
 
 	if odlCommitID == "0000000000000000000000000000000000000000" {
 		getCommitMsgCmd = exec.Command("git", "log", "-1", "--pretty=format:%s")
