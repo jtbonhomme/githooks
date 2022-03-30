@@ -49,6 +49,10 @@ Trim Trailing Whitespace.................................................Passed
 black................................................(no files to check)Skipped
 ```
 
+## Commit message check
+
+Installed [Commit Message Checker for pull request github action](https://github.com/marketplace/actions/commit-message-checker-for-pull-request)
+
 ## Todo
 
 - [ ] Add github Action: https://github.com/marketplace/actions/semantic-pull-request
