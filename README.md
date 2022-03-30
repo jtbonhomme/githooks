@@ -53,6 +53,9 @@ black................................................(no files to check)Skipped
 
 Installed [Commit Message Checker for pull request github action](https://github.com/marketplace/actions/commit-message-checker-for-pull-request)
 
+![](check.png)
+![](check2.png)
+
 ## Todo
 
 - [ ] Add github Action: https://github.com/marketplace/actions/semantic-pull-request
