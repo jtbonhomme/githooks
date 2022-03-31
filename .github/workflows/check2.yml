@@ -1,4 +1,4 @@
-name: 'Commit Message Check 2'
+name: 'Validate PR title'
 
 on:
   pull_request_target:
@@ -25,18 +25,27 @@ jobs:
         with:
           # Configure which types are allowed.
           # Default: https://github.com/commitizen/conventional-commit-types
-          #types: |
-          #  fix
-          #  feat
+          types: |
+            fix
+            feat
+            revert
+            refactor
+            perf
+            build
+            chore
+            ci
+            docs
+            style
+            test
           # Configure which scopes are allowed.
           #scopes: |
           #  core
           #  ui
           # Configure that a scope must always be provided.
-          #requireScope: true
+          requireScope: true
           # Configure additional validation for the subject based on a regex.
           # This example ensures the subject doesn't start with an uppercase character.
-          subjectPattern: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-zA-Z]+-[0-9]+\))?: [\w ]+$'
+          subjectPattern: ^(?![A-Z]).+$
           # If `subjectPattern` is configured, you can use this property to override
           # the default error message that is shown when the pattern doesn't match.
           # The variables `subject` and `title` can be used within the message.
@@ -55,9 +64,9 @@ jobs:
           # will suggest using that commit message instead of the PR title for the
           # merge commit, and it's easy to commit this by mistake. Enable this option
           # to also validate the commit message for one commit PRs.
-          validateSingleCommit: true
+          validateSingleCommit: false
           # Related to `validateSingleCommit` you can opt-in to validate that the PR
           # title matches a single commit to avoid confusion.
-          validateSingleCommitMatchesPrTitle: true
+          validateSingleCommitMatchesPrTitle: false
           # If you use GitHub Enterprise, you can set this to the URL of your server
           #githubBaseUrl: https://github.myorg.com/api/v3
